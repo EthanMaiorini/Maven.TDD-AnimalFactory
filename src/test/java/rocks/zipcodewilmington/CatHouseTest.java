@@ -25,6 +25,7 @@ public class CatHouseTest {
         // Given (some
         String name = "Milo";
         Date birthDate = new Date();
+        int catId = 12;
         Cat animal = AnimalFactory.createCat(name, birthDate);
         CatHouse.clear();
 
@@ -32,7 +33,8 @@ public class CatHouseTest {
         CatHouse.add(animal);
 
         // Then
-        CatHouse.getNumberOfCats();
+        Cat cat = CatHouse.getCatById(0);
+        Assert.assertEquals(animal,cat);
     }
 
     @Test
